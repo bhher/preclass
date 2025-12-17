@@ -74,24 +74,69 @@
           키보드: <kbd>Tab</kbd>으로 탭에 포커스 → <kbd>←</kbd> <kbd>→</kbd>로 변경.
         </p>
 
-        <div class="tabs tabs--css" aria-label="선행수업 주제 탭">
-          <input class="tab-radio" type="radio" name="topic" id="topic-vscode" checked tabindex="-1" aria-hidden="true" />
-          <label class="tab" for="topic-vscode" tabindex="0">VS Code (2.5h)</label>
+        <div class="tabs" data-tabs>
+          <div class="tablist" role="tablist" aria-label="선행수업 주제 탭" data-tablist>
+            <button
+              type="button"
+              class="tab"
+              role="tab"
+              id="tab-vscode"
+              aria-selected="true"
+              aria-controls="panel-vscode"
+              tabindex="0"
+              data-tab
+            >
+              VS Code (2.5h)
+            </button>
 
-          <input class="tab-radio" type="radio" name="topic" id="topic-htmlcss" tabindex="-1" aria-hidden="true" />
-          <label class="tab" for="topic-htmlcss" tabindex="0">HTML/CSS (2.5h)</label>
+            <button
+              type="button"
+              class="tab"
+              role="tab"
+              id="tab-htmlcss"
+              aria-selected="false"
+              aria-controls="panel-htmlcss"
+              tabindex="-1"
+              data-tab
+            >
+              HTML/CSS (2.5h)
+            </button>
 
-          <input class="tab-radio" type="radio" name="topic" id="topic-git" tabindex="-1" aria-hidden="true" />
-          <label class="tab" for="topic-git" tabindex="0">Git/GitHub (2.5h)</label>
+            <button
+              type="button"
+              class="tab"
+              role="tab"
+              id="tab-git"
+              aria-selected="false"
+              aria-controls="panel-git"
+              tabindex="-1"
+              data-tab
+            >
+              Git/GitHub (2.5h)
+            </button>
 
-          <input class="tab-radio" type="radio" name="topic" id="topic-notion" tabindex="-1" aria-hidden="true" />
-          <label class="tab" for="topic-notion" tabindex="0">Notion (1.5h)</label>
+            <button
+              type="button"
+              class="tab"
+              role="tab"
+              id="tab-notion"
+              aria-selected="false"
+              aria-controls="panel-notion"
+              tabindex="-1"
+              data-tab
+            >
+              Notion (1.5h)
+            </button>
+          </div>
 
           <div class="tab-panels">
           <section
             id="panel-vscode"
             class="tabpanel"
+            role="tabpanel"
             tabindex="0"
+            aria-labelledby="tab-vscode"
+            data-panel
           >
             <h3>VS Code 사용법 (2.5시간)</h3>
             <div class="grid-2">
@@ -257,7 +302,11 @@ cd ..</code></pre>
           <section
             id="panel-htmlcss"
             class="tabpanel"
+            role="tabpanel"
             tabindex="0"
+            aria-labelledby="tab-htmlcss"
+            data-panel
+            hidden
           >
             <h3>간단 HTML/CSS 사용법 (2.5시간)</h3>
             <div class="grid-2">
@@ -426,7 +475,11 @@ h1 {
           <section
             id="panel-git"
             class="tabpanel"
+            role="tabpanel"
             tabindex="0"
+            aria-labelledby="tab-git"
+            data-panel
+            hidden
           >
             <h3>깃 / 깃허브 사용법 (2.5시간)</h3>
             <div class="grid-2">
@@ -572,7 +625,11 @@ git push -u origin main</code></pre>
           <section
             id="panel-notion"
             class="tabpanel"
+            role="tabpanel"
             tabindex="0"
+            aria-labelledby="tab-notion"
+            data-panel
+            hidden
           >
             <h3>노션 사용법 (1.5시간)</h3>
             <div class="grid-2">
@@ -716,6 +773,7 @@ git push -u origin main</code></pre>
       </footer>
     </main>
 
+    <script src="./app.js" defer></script>
   </body>
 </html>
 

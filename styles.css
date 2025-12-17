@@ -231,18 +231,6 @@ li {
   margin-top: 12px;
 }
 
-.tabs--css {
-  position: relative;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-  border: 1px solid var(--border);
-  padding: 10px;
-  border-radius: var(--radius);
-  background: color-mix(in srgb, var(--card) 85%, transparent);
-}
-
 .tablist {
   display: flex;
   gap: 8px;
@@ -283,34 +271,6 @@ li {
   outline-offset: 2px;
 }
 
-.tab-radio {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-
-.tab-radio:focus-visible + .tab {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
-}
-
-.tab[tabindex="0"]:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
-}
-
-#topic-vscode:checked + label,
-#topic-htmlcss:checked + label,
-#topic-git:checked + label,
-#topic-notion:checked + label {
-  border-color: color-mix(in srgb, var(--brand) 80%, var(--border));
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--brand) 32%, transparent), transparent 55%),
-    linear-gradient(135deg, color-mix(in srgb, var(--brand-2) 18%, transparent), transparent 50%),
-    var(--card-2);
-}
-
 .tab-panels {
   width: 100%;
 }
@@ -323,28 +283,8 @@ li {
   background: var(--card-2);
 }
 
-.tabpanel.is-hidden {
+.tabpanel[hidden] {
   display: none;
-}
-
-.tabs--css .tabpanel {
-  display: none;
-}
-
-#topic-vscode:checked ~ .tab-panels #panel-vscode {
-  display: block;
-}
-
-#topic-htmlcss:checked ~ .tab-panels #panel-htmlcss {
-  display: block;
-}
-
-#topic-git:checked ~ .tab-panels #panel-git {
-  display: block;
-}
-
-#topic-notion:checked ~ .tab-panels #panel-notion {
-  display: block;
 }
 
 .grid-2 {
